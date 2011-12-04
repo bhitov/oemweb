@@ -1,0 +1,39 @@
+<html>
+<body>
+    {% for KML in KML_list %}
+    <p>{{ KML.name }}  data: {{ KML.file.url }}</p>  
+    {% endfor %}
+
+</body>
+</html>
+
+
+
+<div id="form2_div" class="ui-body ui-body-b">
+  <div data-role="fieldcontain">
+   <label for="happy">happy: </label>
+   <input type="text" name="happy" id="id_happy" value="">
+  </div>
+  <div data-role="fieldcontain">
+   <label for="data">data: </label>
+   <input type="text" name="data" id="id_data" value="">
+  </div>
+  <div data-role="fieldcontain" class="ui-checkbox">
+   <fieldset data-role="controlgroup">
+    <input type="checkbox" name="check" id="id_check" class="custom">
+    <label for="check">check</label>
+   </fieldset>
+  </div>
+  <div data-role="fieldcontain">
+   <label for="numbers" class="select">numbers</label>
+   <select name="numbers" id="id_numbers">
+     <option value="1">one</option>
+     <option value="2">two</option>
+     <option value="4">four</option>
+   </select>
+  </div>
+  <div>
+   <button id="submit" type="submit">submit</button>
+  </div>
+</div>']}>
+got text <div id="form2_div" class="ui-body ui-body-b"><div data-role="fieldcontain"><label for="happy">happy: </label><input type="text" name="happy" id="id_happy" value=""></div><div data-role="fieldcontain"><label for="data">data: </label><input type="text" name="data" id="id_data" value=""></div><div data-role="fieldcontain" class="ui-checkbox"><fieldset data-role="controlgroup"><input type="checkbox" name="check" id="id_check" class="custom">     <label for="check">check</label></fieldset></div><div data-role="fieldcontain"><label for="numbers" class="select">numbers</label> <select name="numbers" id="id_numbers"><option value="1">one</option><option value="2">two</option><option value="4">four</option></select></div><div><button id="submit" type="submit">submit</button></div></div>

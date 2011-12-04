@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('#create_post').click(function () {
+        $.post("/posts/createa/", {'data' : $('#id_data').val()}, function(data) {
+            if (data.status==="S") {
+                alert('success');
+            } else {
+                alert("failed with " + data.status);
+            }
+        })
+        .error(function() { 
+            alert('JSON error');
+        });
+        return false;
+    });
+});
+
+
+</script>
+
+
+</head>
+
+<body>
+    <form action="/posts/create/" method="post"><!-- {% csrf_token %} -->
+    {{ form.as_p }}
+    <input id="create_post" type="submit" value="Submit" />
+    </form>
+</body>
+</html>
