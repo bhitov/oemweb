@@ -19,7 +19,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     
 class KML(models.Model):
-    name = models.CharField(max_length = 100)
+    #name = models.CharField(max_length = 100)
     file = models.FileField(upload_to="files")
-    filename = models.CharField(max_length=300)
+    #filename = models.CharField(max_length=300)
 #    filenamex = models.FileField(upload_to="files").name
