@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 
-class Hazards(models.Model):
+class Hazard(models.Model):
     submitted_time = models.DateTimeField(auto_now=True)
     submitted_username = models.CharField(max_length = 150)
     source = models.CharField(max_length = 150, blank=True, null=True)

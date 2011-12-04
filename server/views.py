@@ -5,12 +5,21 @@ from django.utils import simplejson
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import list_detail, create_update
-from server.models import Post, KML
+from server.models import Post, KML, Hazard
 
 @csrf_exempt
-def hazards_form(request):
+def hazard_form(request):
+    print 'blah'
     print request.POST
+    print request.GET
     return HttpResponse("hey!")
+
+def hazard_list(request):
+    print 'in post_list'
+    return list_detail.object_list(
+                    request,
+                    queryset=Hazard.objects.all(),
+                    template_object_name='hazard')
 
 def KML_detail(request, filename):
     print 'in KML_detail'

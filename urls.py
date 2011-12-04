@@ -13,7 +13,9 @@ urlpatterns = patterns('oemweb.server.views',
     url(r'^KML/$', 'KML_form', name='KML_form'),
     #url(r'^KML/(?P<title>\w+)/$', 'KML_detail', name='KML_detail')
     url(r'^KML/files/(?P<filename>.+)$', 'KML_detail', name='KML_detail'),
-    url(r'^hazards/create/$', 'hazards_form', name="hazards_form")
+    url(r'^hazards/create/$', 'hazard_form', name="hazard_form"),
+    url(r'^hazards/$', 'hazard_list', name="hazard_list")
+
     
     
     # Examples:
