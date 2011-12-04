@@ -9,9 +9,17 @@ from server.models import Post, KML, Hazard
 
 @csrf_exempt
 def hazard_form(request):
-    print 'blah'
+    print 'in hazard form'
     print request.POST
     print request.GET
+    try: 
+        return create_update.create_object(
+            request,
+            model=Hazard,
+            post_save_redirect='/hazards')
+    except: 
+        print 'error! while creating object'
+
     return HttpResponse("hey!")
 
 def hazard_list(request):
