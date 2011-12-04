@@ -11,7 +11,11 @@ urlpatterns = patterns('oemweb.server.views',
     url(r'^epipost/$', 'ep_post', name='ep_post'),
     url(r'^KML/create/$', 'KML_form', name='KML_form'),
     url(r'^KML/$', 'KML_form', name='KML_form'),
-    url(r'^KML/(?P<title>\w+)/$', 'KML_detail', name='KML_detail')
+    #url(r'^KML/(?P<title>\w+)/$', 'KML_detail', name='KML_detail')
+    url(r'^KML/files/(?P<filename>.+)$', 'KML_detail', name='KML_detail'),
+    url(r'^hazards/create/$', hazards_form, name="hazards_form")
+    
+    
     # Examples:
     # url(r'^$', 'oemweb.views.home', name='home'),
     # url(r'^oemweb/', include('oemweb.foo.urls')),

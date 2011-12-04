@@ -8,18 +8,18 @@ from django.views.generic import list_detail, create_update
 from server.models import Post, KML
 
 
+def hazard_form(request):
+    print request.POST
 
+def KML_detail(request, filename):
+    print 'in KML_detail'
+    file = KML.objects.get(file="files/%s"%filename).file
+    file.open()
+    response = HttpResponse(file.read(),mimetype="application/vnd.google-earth.kml+xml")
+    response['Content-Disposition'] = 'attachment; filename=%s' % filename
+    file.close()
+    return response
 
-def KML_detail(request, title):
-    print "in KML_detail with title: %s" % title
-    kml = KML.objects.get(name=title)
-    
-    return list_detail.object_list(
-                    request,
-                    queryset=KML.objects.filter(name=title),
-                    template_name='server/kml_list.html',
-                    template_object_name="KML"
-                    )
 @csrf_exempt
 def KML_form(request):
     if request.POST:
