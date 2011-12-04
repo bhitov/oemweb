@@ -7,9 +7,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import list_detail, create_update
 from server.models import Post, KML
 
-
-def hazard_form(request):
+@csrf_exempt
+def hazards_form(request):
     print request.POST
+    return HttpResponse("hey!")
 
 def KML_detail(request, filename):
     print 'in KML_detail'
